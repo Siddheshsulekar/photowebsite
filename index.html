@@ -6,7 +6,62 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
+    <!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+      body {
+        background: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .gallery-header {
+        text-align: center;
+        margin-top: 2rem;
+      }
+      .gallery-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      .gallery-grid {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      }
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+      .overlay {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.5);
+        color: #fff;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      .gallery-item:hover .overlay {
+        opacity: 1;
+      }
+    </style>
 </head>
 <body>
     <header>
@@ -175,13 +230,601 @@
         <div class="time"></div>
     </div>
 
-    
+    <body>
+      
+        
+      <!-- Gallery Section with Background -->
+<div class="gallery-section" style="background-image: url('image/bg.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 4rem 0;">
 
-    
+  <div class="gallery-header text-center text-white">
+    <h1>Our Gallery</h1>
+    <p class="text-muted">Explore our latest visuals and creations</p>
+  </div>
+
+  <!-- 3D Circular Slider START -->
+  <div class="slider-3d-container">
+    <div class="slider">
+      <div class="circle">
+        <div class="slide" style="--i:0"><img src="image/img1.jpg" alt=""></div>
+        <div class="slide" style="--i:1"><img src="image/img2.jpg" alt=""></div>
+        <div class="slide" style="--i:2"><img src="image/img3.jpg" alt=""></div>
+        <div class="slide" style="--i:3"><img src="image/img4.jpg" alt=""></div>
+        <div class="slide" style="--i:4"><img src="image/1.png" alt=""></div>
+        <div class="slide" style="--i:5"><img src="image/2.png" alt=""></div>
+        <div class="slide" style="--i:6"><img src="image/3.png" alt=""></div>
+        <div class="slide" style="--i:7"><img src="image/4.png" alt=""></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .slider-3d-container {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .slider {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    z-index: 2;
+  }
+
+  .slide img {
+    width: 200%;
+    height: 200%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotate 20s linear infinite;
+  }
+
+  .slide {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #17a2b8;
+    color: #fff;
+    line-height: 120px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+</style>
+
+
+
+<div class="about us " style="background-image: url('image/bg2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 4rem 0;">
+  <div class="overlay" style="position: absolute; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.6); z-index: -1;"></div>
+
+  <div class="row w-100 m-0 px-5">
+    <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="1000">
+      <img src="image/img1.jpg" alt="About Us" class="img-fluid rounded shadow-lg w-100">
+    </div>
+    <div class="col-md-6 d-flex flex-column justify-content-center" data-aos="fade-left" data-aos-duration="1000">
+      <h2 class="mb-4 fw-bold text-warning">About Us</h2>
+      <p class="mb-3">
+        Welcome to our creative space! We are a passionate team of photographers and designers dedicated to capturing life’s most beautiful moments and transforming them into lasting memories.
+      </p>
+      <p>
+        With a strong belief in the power of visuals, our mission is to deliver inspiring, high-quality content that tells a story. Whether you're here to explore, collaborate, or get inspired — thank you for being a part of our journey!
+      </p>
+      <div class="d-flex mt-4 gap-4 flex-wrap">
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+          <h4 class="text-light">10+</h4>
+          <p>Years Experience</p>
+        </div>
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="400">
+          <h4 class="text-light">500+</h4>
+          <p>Projects</p>
+        </div>
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="600">
+          <h4 class="text-light">100%</h4>
+          <p>Client Satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<style>
+  .about-us {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  
+}
+
+.about-us::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: -1;
+}
+
+</style>
+
+
+
+<!-- Our Services Section -->
+<!-- Our Services Section -->
+<div class="our-services" style="background-image: url('image/bg3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 4rem 0;">
+  <div class="overlay"></div>
+  <div class="container text-center text-white" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="services-heading">Our Services</h2>
+    <p class="text-muted">Explore the wide range of creative services we offer to bring your ideas to life</p>
+  </div>
+
+  <!-- Services Cards Container -->
+  <div class="services-cards">
+    <div class="service-card">
+      <div class="service-video">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="service-info">
+        <h4>Photography</h4>
+        <p>We specialize in capturing the beauty of moments with high-quality photography, ensuring each shot is a timeless masterpiece.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-video">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/oHg5SJYRHA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="service-info">
+        <h4>Graphic Design</h4>
+        <p>Our graphic design services range from logos to brand identity, offering visually striking designs that capture the essence of your business.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-video">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="service-info">
+        <h4>Web Development</h4>
+        <p>We build dynamic and responsive websites that engage your audience, utilizing the latest technologies to ensure optimal performance.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-video">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/5qap5aO4i9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="service-info">
+        <h4>Digital Marketing</h4>
+        <p>We provide targeted marketing strategies to help your brand grow, leveraging social media, SEO, and content marketing.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-center mt-5">
+    <a href="contact.html" class="btn btn-warning btn-lg" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">Get in Touch</a>
+  </div>
+</div>
+
+<style>
+  /* Our Services Section */
+/* Our Services Section */
+.our-services {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.our-services::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.our-services .container {
+  z-index: 1;
+  text-align: center; /* Center align text inside the container */
+}
+
+/* Center the heading */
+.services-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f1c40f;
+  margin-bottom: 2rem;
+  text-align: center; /* Ensure it is centered */
+}
+
+/* Service Description */
+.our-services p {
+  font-size: 1.2rem;
+  margin-bottom: 4rem;
+  text-align: center; /* Center align paragraph */
+}
+
+/* Services Cards Container */
+.services-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Individual Service Card */
+.service-card {
+  background-color: #fff;
+  color: #333;
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-video {
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+}
+
+.service-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.service-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.service-info h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.service-info p {
+  font-size: 1rem;
+  color: #666;
+}
+
+  </style>
+
+<div class="demo-video-heading">
+  <h2>Demo Video</h2>
+</div>
+
+<style>
+  .demo-video-heading {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #000; /* Optional: a background to separate sections */
+}
+
+.demo-video-heading h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 0;
+}
+
+</style>
+
+
+<div class="demo-section-with-bg-video">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="image/demo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  </div>
+
+  
+
+
+
+<style>
+  .demo-section-with-bg-video {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height or change as needed */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.demo-overlay {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent overlay for readability */
+  border-radius: 12px;
+  max-width: 800px;
+}
+
+.demo-overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.demo-overlay p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+  </style>
+
+
+
+
+
+<!-- Contact Section START -->
+<!-- Contact Section START -->
+<section class="contact-section">
+  <!-- Background Image -->
+  <div class="bg-image"></div>
+
+  <!-- Contact Content -->
+  <div class="contact-wrapper">
+    <h2 class="section-title">Get in Touch</h2>
+
+    <div class="contact-box">
+      <!-- Contact Form -->
+      <form class="contact-form" onsubmit="event.preventDefault()">
+        <div class="form-group">
+          <input type="text" name="name" required placeholder=" " />
+          <label>Your Name</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" name="email" required placeholder=" " />
+          <label>Your Email</label>
+        </div>
+
+        <div class="form-group">
+          <textarea name="message" rows="5" required placeholder=" "></textarea>
+          <label>Your Message</label>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <ul>
+          <li><i class="fas fa-envelope"></i> info@example.com</li>
+          <li><i class="fas fa-phone-alt"></i> +1 234 567 890</li>
+          <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</li>
+        </ul>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FontAwesome CDN for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Contact Page Styles -->
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .contact-section {
+    position: relative;
+    padding: 4rem 1rem;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image/bg2.jpg') no-repeat center center/cover;
+    z-index: -1;
+    filter: brightness(0.5);
+  }
+
+  .contact-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .contact-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .contact-form,
+  .contact-info {
+    flex: 1 1 45%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+
+  .contact-form:hover,
+  .contact-info:hover {
+    transform: translateY(-5px);
+  }
+
+  .form-group {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-bottom: 2px solid #17a2b8;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    resize: none;
+  }
+
+  .form-group label {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    color: #ccc;
+    pointer-events: none;
+    transition: 0.3s ease;
+  }
+
+  .form-group input:focus + label,
+  .form-group input:not(:placeholder-shown) + label,
+  .form-group textarea:focus + label,
+  .form-group textarea:not(:placeholder-shown) + label {
+    top: -1rem;
+    font-size: 0.9rem;
+    color: #17a2b8;
+  }
+
+  .submit-btn {
+    padding: 0.8rem 2rem;
+    background-color: #17a2b8;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #138496;
+  }
+
+  .contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    text-align: left;
+  }
+
+  .contact-info li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .social-links {
+    margin-top: 1rem;
+  }
+
+  .social-links a {
+    margin: 0 0.5rem;
+    color: #17a2b8;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+
+  .social-links a:hover {
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .contact-box {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-form,
+    .contact-info {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+
 
     <script src="app.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 </body>
 </html>
